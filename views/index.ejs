@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图书管理系统</title>
+    <style>
+        table,tr,td,th{border-collapse: collapse; border: 1px solid #ddd; padding: 5px 10px;}
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+        <th>_id</th>
+        <th>书名</th>
+        <th>作者</th>
+        <th>价钱</th>
+        <th>分类</th>
+        <th>修改</th>
+    </thead>
+    <tbody>
+    <%for(var i=0;i<bookTotal.length;i++){%>
+        <tr>
+            <td><%=bookTotal[i]._id%></td>
+            <td><%=bookTotal[i].name%></td>
+            <td><%=bookTotal[i].author%></td>
+            <td><%=bookTotal[i].price%></td>
+            <td><%=bookTotal[i].type%></td>
+            <td><a href="/editBook/?id=<%=bookTotal[i]._id%>">修改</a></td>
+        </tr>
+    <%}%>
+    </tbody>
+</table>
+</body>
+</html>
